@@ -24,7 +24,7 @@ Créer un plugin à partir du modèle d'exemple:
         			"psr-4": {"NonDuNamespace\\":"./src"}
    			 }
 		7d. Lancer composer intsall dans le terminal pour pouvoir installer les namespaces.
-		7e. Remplacer les anciens namespaces CAA par celui que vous avez choisi.
+		7e. Remplacer les anciens namespaces Example par celui que vous avez choisi.
 
 		Tips: utiliser le même tips précédent.
 
