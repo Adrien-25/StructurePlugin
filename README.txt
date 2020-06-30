@@ -1,7 +1,7 @@
 Créer un plugin à partir du modèle d'exemple:
 
 
-	1. Changer le nom du plugin et la description dans le fichier MRL-CAA.php
+	1. Changer le nom du plugin et la description dans le fichier MRL-Example.php
 
 	2. Changer les noms des fonctions register_activation et register_deactivation dans MRL-Example.php
 
@@ -14,57 +14,57 @@ Créer un plugin à partir du modèle d'exemple:
 		Tips: 	utiliser la fonction Search de Visual Code Studio qui vous permez de trouver tous les endroit où se trouve une phrase
 			et de pouvoir la remplacer.
 
-	6. Configurer les Namespaces
-		6a. Supprimer le dossier Vendor et le fichier composer.json
-		6b. Dans le terminal, aller dans le dossier du plugin puis lancer composer init pour configurer le fichier composer.json
-		6c. Aller dans le fichier composer.json et insérer cla ligne suivante en dessous de "require":{}, (ne as oublier d'ajouter la virgule après le "require"):
+	6. Changer le nom du @package sur tous les fichier qui en contient par le nom de votre plugin.
+
+	7. Configurer les Namespaces
+		7a. Supprimer le dossier Vendor et le fichier composer.json
+		7b. Dans le terminal, aller dans le dossier du plugin puis lancer composer init pour configurer le fichier composer.json
+		7c. Aller dans le fichier composer.json et insérer cla ligne suivante en dessous de "require":{}, (ne as oublier d'ajouter la virgule après le "require"):
 			"autoload": {
         			"psr-4": {"NonDuNamespace\\":"./src"}
    			 }
-		6d. Lancer composer intsall dans le terminal pour pouvoir installer les namespaces.
-		6e. Remplacer les anciens namespaces CAA par celui que vous avez choisi.
-
-	4. Changer le nom du @package sur tous les fichier qui en contient par le nom de votre plugin.
+		7d. Lancer composer intsall dans le terminal pour pouvoir installer les namespaces.
+		7e. Remplacer les anciens namespaces CAA par celui que vous avez choisi.
 
 		Tips: utiliser le même tips précédent.
 
-	5. Changer le nom des ficher css et js, puis les faire correspondre dans src > Base > Enqueue.php dans la fonction enqueue().
+	8. Changer le nom des ficher css et js, puis les faire correspondre dans src > Base > Enqueue.php dans la fonction enqueue().
 
 
 
-	6. Ajouter des sous-pages à un plugin:
+	9. Ajouter des sous-pages à un plugin:
 
-		6a. L'ajouter dans l'array $managers_admin dans src > Base > BaseController.php. 
+		9a. L'ajouter dans l'array $managers_admin dans src > Base > BaseController.php. 
 			// A ce niveau, il devrait être possible de cocher la case correspondant au nom de la sous page. Même si cela ne donne rien.
 
-		6b. Ajouter son controlleur en créant un fichier php dans src > Base.
+		9b. Ajouter son controlleur en créant un fichier php dans src > Base.
 
-		6c. Copier/Coller la structure du controlleur depuis l'un des deux controlleurs d'exemples
+		9c. Copier/Coller la structure du controlleur depuis l'un des deux controlleurs d'exemples
 
-		6d. Changer le nom de la class du controlleur.
+		9d. Changer le nom de la class du controlleur.
 
-		6e. Copier la clé du tableau corespondant à la sous-page créé que vous avez entré dans l'array $managers_admin dans src > Base > BaseController.php.
+		9e. Copier la clé du tableau corespondant à la sous-page créé que vous avez entré dans l'array $managers_admin dans src > Base > BaseController.php.
 
-		6f. Coller la dans le controlleur que vous venez de créer à la ligne 24 (dans la condition if de la fonction register()) et à la ligne 62 (dans 'menu_slug')
+		9f. Coller la dans le controlleur que vous venez de créer à la ligne 24 (dans la condition if de la fonction register()) et à la ligne 62 (dans 'menu_slug')
 
-		6g. Remplacer le titre de la page dans les lignes 59 et 60 (dans 'menu_title' => et 'page_title' =>).
+		9g. Remplacer le titre de la page dans les lignes 59 et 60 (dans 'menu_title' => et 'page_title' =>).
 
-		6h. Changer le nom du callback à la ligne 63 ('callback' =>)
+		9h. Changer le nom du callback à la ligne 63 ('callback' =>)
 
-		6i. Aller dans src > API > Callbacks > AdminCallbacks.php. Rajouter le callback de l'étape précédente.
+		9i. Aller dans src > API > Callbacks > AdminCallbacks.php. Rajouter le callback de l'étape précédente.
 			Dans cette fonction, retourner un require_once du fichier php qui va servier de visuel dans la partie admin.
 
-		6j. Aller dans le dossier templates et créer le fichier qui correspondra au visuel. Il faut qu'il est le même nom que ce qui a été inséré à l'étape précédente.
+		9j. Aller dans le dossier templates et créer le fichier qui correspondra au visuel. Il faut qu'il est le même nom que ce qui a été inséré à l'étape précédente.
 
-		6k. Pour finir, aller dans src > Init et inserer la class de votre controlleur dans le return de la fonction get_services pour pouvoir l'appeler.
+		9k. Pour finir, aller dans src > Init et inserer la class de votre controlleur dans le return de la fonction get_services pour pouvoir l'appeler.
 
 
-	7. Changer la page principale:
+	10. Changer la page principale:
 	
-		7a. Aller dans src > Pages > Dashboards.php
+		10a. Aller dans src > Pages > Dashboards.php
 
-		7b. Changer menu_title pour le nom de la page dans la fonction setPages
+		10b. Changer menu_title pour le nom de la page dans la fonction setPages
 
-		7c. Changer icon_url dans la même fonction pour changer l'image de l'icone
+		10c. Changer icon_url dans la même fonction pour changer l'image de l'icone
 
 			Tips: taper dashicons sur google et vous tomberez sur le site wordpress qui vous fournis les dashicons

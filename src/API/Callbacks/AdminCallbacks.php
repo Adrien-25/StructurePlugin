@@ -16,16 +16,12 @@ class AdminCallbacks extends BaseController
         return require_once( "$this->plugin_path/templates/admin/admin.php");
     }
     
-    public function adminValidationMembre(){
-        return require_once( "$this->plugin_path/templates/admin/validation-membre.php");
+    public function adminArticles(){
+        return require_once( "$this->plugin_path/templates/admin/articles.php");
     }
 
-    public function adminAPropos(){
-        return require_once( "$this->plugin_path/templates/admin/a-propos.php");
-    }
-
-    public function adminActualitesEvenements(){
-        return require_once( "$this->plugin_path/templates/admin/actualites-evenements.php");
+    public function adminActualites(){
+        return require_once( "$this->plugin_path/templates/admin/actualites.php");
     }
 
 }
